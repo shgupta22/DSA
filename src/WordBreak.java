@@ -4,24 +4,23 @@ import java.util.Map;
 
 public class WordBreak {
     public static boolean wordBreak(String s, List<String> wordDict) {
-
         return dp(s, wordDict, new HashMap<>());
     }
 
-    public static boolean dp(String s, List<String> wordDict, Map<String, Boolean> map) {
-        if(map.containsKey(s)) return map.get(s);
-        if(s.isEmpty()) return true;
+    public static boolean dp(String target, List<String> wordDict, Map<String, Boolean> map) {
+        if(map.containsKey(target)) return map.get(target);
+        if(target.isEmpty()) return true;
 
         for (String word: wordDict) {
-            if (s.indexOf(word) ==0) {
-                String sub = s.substring(word.length());
+            if (target.indexOf(word) ==0) {
+                String sub = target.substring(word.length());
                 if (wordBreak(sub, wordDict)){
-                    map.put(s, true);
+                    map.put(target, true);
                     return true;
                 }
             }
         }
-        map.put(s, false);
+        map.put(target, false);
         return false;
     }
 
