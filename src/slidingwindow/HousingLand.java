@@ -18,14 +18,14 @@ public class HousingLand {
         int[] prefix = new int[n];
         prefix[0] = lands[0];
         for (int i = 1; i < n; i++) {
-            prefix[i] = prefix[i-1] + lands[i];
+            prefix[i] = prefix[i - 1] + lands[i];
         }
-//prefixSum(new int[]{1,3,2,1,4,1,3,2,1,1,2}, 8);
-//                    0,1,2,3,4,5,6,7,8,9,10
-        for (int i =1; i < n;i++) {
-            for (int j = 0; j <n;j++) {
-                if (prefix[j] - prefix[i-1] == target) {
-                    System.out.println(i+","+j);
+        //prefixSum(new int[]{1,3,2,1,4,1,3,2,1,1,2}, 8);
+        //                    0,1,2,3,4,5,6,7,8,9,10
+        for (int i = 1; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (prefix[j] - prefix[i - 1] == target) {
+                    System.out.println(i + "," + j);
                 }
             }
         }
@@ -36,23 +36,23 @@ public class HousingLand {
         int[] prefix = new int[n];
         prefix[0] = lands[0];
         for (int i = 1; i < n; i++) {
-            prefix[i] = prefix[i-1] + lands[i];
+            prefix[i] = prefix[i - 1] + lands[i];
         }
 
         System.out.println(Arrays.toString(prefix));
-        for (int i =1; i < n; i++) {
-            int l = i-1;
-            int h = n-1;
+        for (int i = 1; i < n; i++) {
+            int l = i - 1;
+            int h = n - 1;
             while (l < h) {
-                int mid = (l+h)/2;
+                int mid = (l + h) / 2;
                 int i1 = prefix[mid] - prefix[i - 1];
                 if (i1 == target) {
-                    System.out.println(i+","+mid);
+                    System.out.println(i + "," + mid);
                     break;
                 } else if (i1 - target < 0) {
-                    l = mid +1;
+                    l = mid + 1;
                 } else {
-                    h = mid -1;
+                    h = mid - 1;
                 }
             }
         }
@@ -77,24 +77,21 @@ public class HousingLand {
 
             // check is sum == target
             if (sum == target) {
-                System.out.println(i + "," + (j-1));
+                System.out.println(i + "," + (j - 1));
             }
         }
     }
 
 
-
-
-
     public static void main(String[] args) {
-        prefixSum(new int[]{1,3,2,1,4,1,3,2,1,1,2}, 8);
+        prefixSum(new int[]{1, 3, 2, 1, 4, 1, 3, 2, 1, 1, 2}, 8);
         //                  0,1,2,3,4,5,6,7,8,9,10
         System.out.println("*****");
-        prefixSumBinarySearch(new int[]{1,3,2,1,4,1,3,2,1,1,2}, 8);
+        prefixSumBinarySearch(new int[]{1, 3, 2, 1, 4, 1, 3, 2, 1, 1, 2}, 8);
         //                              0,1,2,3,4,5,6,7,8,9,10
         //                             [1,4,6,7,11,12,15,17,18,19,21]
 
         System.out.println("*****");
-        housingLand(new int[]{1,3,2,1,4,1,3,2,1,1,2}, 8);
+        housingLand(new int[]{1, 3, 2, 1, 4, 1, 3, 2, 1, 1, 2}, 8);
     }
 }
