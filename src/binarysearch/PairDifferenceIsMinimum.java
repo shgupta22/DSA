@@ -55,6 +55,7 @@ public class PairDifferenceIsMinimum {
         System.out.println(lowerBound(new int[]{4,6,9,10,14,15,17,20}, 11));
         System.out.println(lowerBound(new int[]{4,6,9,10,14,15,17,20}, 16));
         System.out.println(lowerBound(new int[]{4,6,9,10,14,15,17,20}, 2));
+        System.out.println(lowerBound(new int[]{4,6,9,10,14,15,17,20}, 30));
 
         findPair(new int[]{-1,5,10,20,3}, new int[]{26,134,135,15,17});
     }
