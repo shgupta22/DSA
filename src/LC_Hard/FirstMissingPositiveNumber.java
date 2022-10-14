@@ -1,3 +1,5 @@
+package LC_Hard;
+
 import java.util.Map;
 
 public class FirstMissingPositiveNumber {

@@ -1,3 +1,5 @@
+package binarysearch;
+
 public class MedianOf2SortedArray {
 
     public static double median(int[] arr1, int[] arr2) {

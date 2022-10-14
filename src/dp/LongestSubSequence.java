@@ -1,3 +1,5 @@
+package dp;
+
 public class LongestSubSequence {
 
     public static int longestSubsequenceLength(String text1, String text2) {

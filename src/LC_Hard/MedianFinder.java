@@ -1,3 +1,5 @@
+package LC_Hard;
+
 import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.Queue;
@@ -82,7 +84,7 @@ public class MedianFinder {
 
     @Override
     public String toString() {
-        return "MedianFinder{" +
+        return "LC_Hard.MedianFinder{" +
                 "small=" + small +
                 ", large=" + large +
                 '}';
