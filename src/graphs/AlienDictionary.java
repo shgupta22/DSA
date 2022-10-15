@@ -54,5 +54,7 @@ public class AlienDictionary {
 
     public static void main(String[] args) {
         System.out.println(alienOrder(new String[]{"wrt","wrf","er","ett","rftt"}));
+        System.out.println(alienOrder(new String[]{"ba", "bc", "ac", "cab"}));
+        System.out.println(alienOrder(new String[]{"cab", "aaa", "aab"}));
     }
 }
