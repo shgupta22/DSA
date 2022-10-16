@@ -4,6 +4,12 @@ public class MountainHighest {
 
     /**
      *
+     * Peaks are formed when A[i-1] < A[i] and A[i+1] < A[i]
+     * if that's true we have one peak, j = i;
+     * now, iterate over the left part and counting until j > 0 and A[j-1] < A[j], j--;
+     * for right part counting until i < n-2 and A[i+1] < A[i], i++
+     *
+     * Keep a Max with currentMax
      * Complexity O(2N)
      */
 

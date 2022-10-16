@@ -7,6 +7,20 @@ import java.util.Set;
 
 public class MinimumSwapToSortArray {
 
+    /**
+     * Minimum Swaps to sort the array
+     *
+     * 1) Create Pair array with current Index and Value
+     * 2) Sort the Pair array
+     * 3) Iterate over the Pair array from current index to prev index of Pair[i], until you find cycle
+     * 4) Use visited set to store the visited nodes
+     * 5) Keep count and increment until cycle is complete
+     * 6) Add the count to Ans and move to next index
+     *
+     * Time: O(NlogN + N)
+     * Space: O(N)
+     */
+
     static class Pair{
         public int val;
         public int index;
