@@ -5,6 +5,18 @@ import java.util.Comparator;
 
 public class MinimumDifference {
 
+
+    /**
+     * Finding Pair of I, J from 2 Array such that their difference is minimum
+     *
+     * 1) Create a Pair of value and Index to preserve the original Indexes
+     * 2) Create 2 List of Pairs with Value and Index
+     * 3) Sort both the Paris array by value
+     * 4) Take to pointer A and B and MinDiff
+     * 5) Check if Abs(P1[A].value - P2[B].value) < diff, if then then update diff
+     * 6) Finally increment Pointer, if (P1[A].value < P2[B].value) ? A++ : B++
+     */
+
     //Preserve original indexes
 
     static class Pair {
