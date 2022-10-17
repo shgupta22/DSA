@@ -6,6 +6,19 @@ import java.util.List;
 
 public class Permutations {
 
+    /**
+     *
+     * Backtracking
+     * 1) Result, TempList, Nums
+     * 2) If (TempList.size  == Nums.length) result.add(tempList);
+     * 3) else, for (int i=0; i < length; i++)
+     * 4)   if (tempList.contains(nums[i]) continue;
+     * 5)   tempList.add(nums[i])
+     * 6)   backTrack(result, tempList, nums)
+     * 7)   tempList.remove(tempList.size()-1);
+     *
+     * */
+
     public static List<List<Integer>> permutations(int[] nums) {
         Arrays.sort(nums);
         List<List<Integer>> result = new ArrayList<>();
@@ -17,11 +30,11 @@ public class Permutations {
         if (tempList.size() == nums.length) {
             result.add(new ArrayList<>(tempList));
         } else {
-            for (int i = 0; i < nums.length; i++) {
-                if (tempList.contains(nums[i])) continue;
-                tempList.add(nums[i]);
+            for (int num : nums) {
+                if (tempList.contains(num)) continue;
+                tempList.add(num);
                 backtack(result, tempList, nums);
-                tempList.remove(tempList.size() -1);
+                tempList.remove(tempList.size() - 1);
             }
         }
     }

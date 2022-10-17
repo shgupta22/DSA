@@ -1,6 +1,46 @@
 package backtracking;
 
 public class SolveSudoku {
+
+    /**
+     * Backtracking
+     *
+     * 1) solveSudoku(int i, int j, mat[][], int n)
+     * 2) solveSudoku(0,0,mat[][], 9)
+     *
+     * 3) if ( i == n) we found the solution print
+     * 4) if ( j == n) solveSudoku(i+1, 0, mat[][], n) move to next row
+     *
+     * 5) if ( mat[i][j] != 0) solveSudoku(i, j+1, mat[][], n) if already have a value move to next column
+     *
+     * 6) for (int k =1; k <= 9; k++)
+     *      if (canPlaceValue(i, j, k, mat[][], n)
+     *          mat[i][j] = k;
+     *          success = solveSudoku(i, j+1, mat[][], n)
+     *          if (success) return true;
+     *
+     * 7) mat[i][j] = 0;
+     * 8) return false;
+     *
+     *
+     * canPlaceValue(x, y, no, mat[][], n)
+     *
+     * for (i= 0; i <9; i++)
+     *      if (mat[i][y] == no || mat[x][i] == no)
+     *          return false;
+     *
+     * sx = (x/3)*3;
+     * sy = (y/3)*3;
+     *
+     * for (int i = sx; i < sx+3; i++)
+     *      for (j = sy; j < sy+3; j++)
+     *          if (mat[i][j] == no) return false;
+     *
+     * return true;
+     *
+     *
+     */
+
     public static boolean solveSubProblem(int[][] mat, int i, int j, int no, int n) {
         //row
         //col

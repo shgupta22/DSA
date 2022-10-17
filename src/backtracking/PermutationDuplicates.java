@@ -6,6 +6,23 @@ import java.util.List;
 
 public class PermutationDuplicates {
 
+    /**
+     * Input Contains duplicates Numbers
+     *
+     *  *** Sort the NUMS is required in case of duplicates ***
+     * 1) Result, TempList, Nums, Boolean Visited(index)
+     * 2) if (tempList.size == Nums.length) result.add(tempList);
+     * 3) else, for (int i=0; i < n; i++)
+     * 4)       if ( visited[i] || i>=0 && nums[i] == nums[i-1] && !visited[i-1]) continue;
+     * 5)       visited[i]= true;
+     * 6)       tempList.add(nums[i])
+     * 7)       backTrack(result, tempList, nums, visited)
+     * 8)       tempList.remove(tempList.size - 1)
+     * 9)       visited[i] = false;
+     *
+     */
+
+
     //Will return Unique combination
     public static List<List<Integer>> permutationWithDuplicates(int[] nums) {
         Arrays.sort(nums);
@@ -19,7 +36,7 @@ public class PermutationDuplicates {
             result.add(new ArrayList<>(tempList));
         } else {
             for (int i = 0; i < nums.length; i++) {
-                if(visited[i] || i >0 && nums[i] == nums[i-1] && !visited[i-1]) continue;
+                if(visited[i] || i >0 && nums[i] == nums[i-1] && !visited[i-1]) continue; // skip duplicates
                 visited[i] = true;
                 tempList.add(nums[i]);
                 backtrack(result, tempList, nums, visited);

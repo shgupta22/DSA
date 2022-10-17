@@ -5,6 +5,17 @@ import java.util.List;
 
 public class AllPalindromeString {
 
+    /**
+     * Backtrack Recipe:
+     * 1) Take Input, Result, TempStorage, StartIndex/StartValue
+     * 2) If Start == Input.length // breaking condition
+     * 3) Add the Temp to Result
+     *
+     * 4) Else for each Index from Start to Length of Input, check isPalindrome
+     * 5) If True Temp add SubString of Input[start to i+1] and make Recursive Call with Input, Result, Temp, I+1
+     * 6) Remove the last added substring from Temp.remove(temp.size()-1)
+     */
+
     public static List<List<String>> palindrome(String s) {
         List<List<String>> result = new ArrayList<>();
         backtack(result, new ArrayList<>(), s, 0);
@@ -33,5 +44,6 @@ public class AllPalindromeString {
     }
     public static void main(String[] args) {
         System.out.println(palindrome("aab"));
+        System.out.println(palindrome("aabaa"));
     }
 }

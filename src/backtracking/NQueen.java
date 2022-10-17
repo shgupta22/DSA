@@ -2,6 +2,24 @@ package backtracking;
 
 public class NQueen {
 
+    /**
+     *
+     * Backtracking
+     *
+     * 1) SolveNQueen(int N, int[][] board, int i) // this will be used for iterating over rows
+     * 2) if (i == N) printBoard return true;
+     * 3) for (int j = 0; j < N; j++)
+     * 4)   if (canPlace(i,j,N,board)
+     * 5)       board[i][j] = 1;
+     * 6)       success = SolveNQueen(N, board, i+1);
+     * 7)       if ( success) return true;
+     * 8)       board[i][j] = 0;
+     *
+     * 9) canPlace(int x, int y, int N, int[][] board)
+     *      check in column, check in right diagonal, check in left diagonal
+     *
+     */
+
     public static boolean canPlace(int[][] board, int n,int x, int y) {
         // place in column
         for (int i=0; i < x; i++) {
