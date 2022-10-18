@@ -3,6 +3,25 @@ package binarytree;
 import java.util.*;
 
 public class TopView {
+
+    /**
+     * Top View: Map with Horizontal distance, Queue for Traversal
+     * For Putting Left Decrement HD by 1, HD-1
+     * For Putting Right Increment HD by 1, HD+1;
+     *
+     * Before Putting value in Map check if its present or not.
+     *
+     * Queue.add(root)
+     * While(queue.isNotEmpty())
+     * Node = queue.poll();
+     * Hd = node.hd;
+     * if (!map.contains(hd)) map.put(hd, node.val)
+     *
+     * if (node.left != null) node.left.hd = hd -1; queue.add(node.left);
+     * if (node.right != null) node.right.hd = hd+1; queue.add(node.right);
+     */
+
+
     class Node{
         int data;
         Node left;

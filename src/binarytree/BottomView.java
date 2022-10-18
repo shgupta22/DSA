@@ -4,6 +4,18 @@ import java.util.*;
 
 public class BottomView {
 
+    /**
+     * Bottom View
+     * 1) Use a HorizontalDistance Identifier
+     * 2) Use HD as a Key in HashMap and put each and every Node's value in Map
+     * 3) For Moving Left Decrement the current HD by 1, HD - 1;
+     * 4) For Moving Right Increment the current HD by 1, HD + 1;
+     * 5) Use BFS Traversal using Queue to iterate over the tree
+     *
+     * Time: O(N + M) N: no of Node, M: No of Edges
+     * Space: O(N + N) N: for Queue, N: for HashMap
+     */
+
     public class TreeNode {
         int val;
         TreeNode left;
