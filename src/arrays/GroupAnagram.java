@@ -14,7 +14,7 @@ public class GroupAnagram {
         Time: O(N * klogk)
         Space: O(N)
 
-        APPROACH 2) One optimisation
+        APPROACH 2) One optimisation to avoid sorting
             - Use char[26] array and parse the string (s.charAt(i) - 'a')++
             - the convert this char[26] array to String and map to Key in hashMap
             - this will save the Sorting time for the algo

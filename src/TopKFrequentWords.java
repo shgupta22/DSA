@@ -6,8 +6,7 @@ public class TopKFrequentWords {
         Map<String, Integer> map = new TreeMap<>();
 
         for (String word: words) {
-            Integer val = map.getOrDefault(word, 0);
-            map.put(word, ++val);
+            map.put(word, map.getOrDefault(word, 0)+1);
         }
 
         Queue<Map.Entry<String, Integer>> queue = new PriorityQueue<>((a,b) -> {
