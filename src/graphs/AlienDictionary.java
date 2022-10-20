@@ -4,6 +4,44 @@ import java.util.*;
 
 public class AlienDictionary {
 
+    /**
+     * There is a new alien language which uses the latin alphabet.
+     * However, the order among letters are unknown to you.
+     * You receive a list of non-empty words from the dictionary,
+     * where words are sorted lexicographically by the rules of this new language.
+     * Derive the order of letters in this language.
+     *
+     *
+     * 1) You may assume all letters are in lowercase.
+     * 2) The dictionary is invalid, if string a is prefix of string b and b is appear before a.
+     * 3) If the order is invalid, return an empty string.
+     * 4) There may be multiple valid order of letters, return the smallest in normal lexicographical order.
+     * 5) The letters in one string are of the same rank by default and are sorted in Human dictionary order.
+     *
+     * 1) Build Adjacency List of each character make an entry in Map
+     * 2) Iterate over the words for checking if they are in correct order as lexicographically sorted
+     *      for (i =0; i < n-1; i++)
+     *          w1 = words[i];
+     *          w2 = words[i+1];
+     *          minLen = main(w1.length, w2.length)
+     *
+     *          //breaking condition w1.len > w2.len and w1.prefix == w2.prefix
+     *          // eg: w1 = apes, w2 = ape NOT CORRECT ORDER
+     *          if (w1.len > w2.len && w1.subString(0, minLen) == w2.subString(0, minLen))
+     *              return "";
+     *          for (int j = 0; j < minLen; j++) {
+     *              if (w1.charAt(j) != w2.charAt(j) {
+     *                  adj.get(w1.charAt(j)).add(w2.charAt(j));
+     *                  break;
+     *              }
+     *          }
+     *
+     *
+     *          Use Visited Map with Character and a Boolean
+     *          Do a DFS search, and if true return "" empty string
+     *          or else append each character to result
+     *
+     */
     public static String alienOrder(String[] words) {
         Map<Character, Set<Character>> adj = new HashMap<>();
 
