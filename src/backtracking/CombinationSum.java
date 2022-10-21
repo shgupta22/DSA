@@ -15,7 +15,7 @@ public class CombinationSum {
      * 2) If (Target < 0) return;
      * 3) if (Target == 0) Result.add(tempList) return;
      * 4) Else For (i = Start; i< length; i++)
-     * 5)   TempList.add(Nums[i]); BackTrack(result, templsit, Nums, Target-Nums[i], i+1)
+     * 5)   TempList.add(Nums[i]); BackTrack(result, templsit, Nums, Target-Nums[i], i)
      * 6)   TempList.Remove(tempList.size()-1);
      *
      */
